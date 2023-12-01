@@ -1,0 +1,19 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px
+) !default;
+
+$fx-gaps: (
+  0: 0,
+  4: 4px,
+  8: 8px,
+  10: 10px,
+  15: 15px,
+  16: 16px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+) !default;

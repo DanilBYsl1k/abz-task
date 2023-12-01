@@ -1,0 +1,165 @@
+.fx {
+  display: flex;
+}
+
+.fx-shrink-0 {
+  flex-shrink: 0;
+}
+
+@mixin flex-core($infix) {
+  .fx#{$infix}-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @each $name, $size in $fx-gaps {
+    .fx-gap#{$infix}-#{$name} {
+      & > :not(:last-child) {
+        margin: 0 $size 0 0;
+      }
+    }
+
+    .fx-gap-#{$name} {
+      & > :not(:last-child) {
+        margin: 0 $size 0 0;
+      }
+    }
+  }
+
+  .fx#{$infix}-column {
+    display: flex;
+    flex-direction: column;
+
+    @each $name, $size in $fx-gaps {
+      .fx-gap#{$infix}-#{$name} {
+        & > :not(:last-child) {
+          margin: 0 0 $size 0;
+        }
+      }
+    }
+  }
+
+  .fx#{$infix}-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .fx#{$infix}-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .fx#{$infix}-wrap {
+    flex-wrap: wrap;
+  }
+
+  .fx#{$infix}-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .fx#{$infix}-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  .justify-content#{$infix}-start {
+    justify-content: flex-start;
+  }
+
+  .justify-content#{$infix}-end {
+    justify-content: flex-end;
+  }
+
+  .justify-content#{$infix}-center {
+    justify-content: center;
+  }
+
+  .justify-content#{$infix}-between {
+    justify-content: space-between;
+  }
+
+  .justify-content#{$infix}-around {
+    justify-content: space-around;
+  }
+
+  .align-items#{$infix}-start {
+    align-items: flex-start;
+  }
+
+  .align-items#{$infix}-end {
+    align-items: flex-end;
+  }
+
+  .align-items#{$infix}-center {
+    align-items: center;
+  }
+
+  .align-items#{$infix}-baseline {
+    align-items: baseline;
+  }
+
+  .align-items#{$infix}-stretch {
+    align-items: stretch;
+  }
+
+  .align-content#{$infix}-start {
+    align-content: flex-start;
+  }
+
+  .align-content#{$infix}-end {
+    align-content: flex-end;
+  }
+
+  .align-content#{$infix}-center {
+    align-content: center;
+  }
+
+  .align-content#{$infix}-between {
+    align-content: space-between;
+  }
+
+  .align-content#{$infix}-around {
+    align-content: space-around;
+  }
+
+  .align-content#{$infix}-stretch {
+    align-content: stretch;
+  }
+
+  .align-self#{$infix}-auto {
+    align-self: auto;
+  }
+
+  .align-self#{$infix}-start {
+    align-self: flex-start;
+  }
+
+  .align-self#{$infix}-end {
+    align-self: flex-end;
+  }
+
+  .align-self#{$infix}-center {
+    align-self: center;
+  }
+
+  .align-self#{$infix}-baseline {
+    align-self: baseline;
+  }
+
+  .align-self#{$infix}-stretch {
+    align-self: stretch;
+  }
+
+  .fx-flex#{$infix} {
+    flex: 1 1 0;
+
+    &-50 {
+      flex: 1 1 100%;
+      max-width: 50%;
+    }
+
+    &-100 {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+}

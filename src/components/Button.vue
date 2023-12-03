@@ -4,8 +4,7 @@
 </button>
 </template>
 <script setup>
-
-const props = defineProps({
+defineProps({
   label: {
       type: String,
       default: ''
@@ -30,5 +29,9 @@ const props = defineProps({
     min-width: 100px;
     padding: 8px 20px;
     background-color: $primary_color;
+    &:disabled {
+      background-color: #B4B4B4;
+      color: white;
+    }
   }
 </style>

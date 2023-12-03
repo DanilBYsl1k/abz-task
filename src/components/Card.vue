@@ -13,8 +13,7 @@
 </template>
 
 <script setup>
-
-const props = defineProps({
+defineProps({
   user: {
     type: Object,
     required: true
@@ -24,6 +23,8 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
+@import '../styles/extends/ellipsis';
+
 .card {
   width: 370px;
   height: 254px;
@@ -34,9 +35,11 @@ const props = defineProps({
   
   &__more-info {
     margin: 20px;
+    
   }
-
+  
   p {
+    @extend %ellipsis;
     margin: 0;
     padding: 0;
   }

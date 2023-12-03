@@ -4,27 +4,36 @@
       <img class="header__img" src="icons/logo.svg" alt="logo">
 
       <div class="header__buttons fx">
-        <Button label="Users"></Button>
-        <Button label="Sign up"></Button>
+        <a href="#get" class="button">Users</a>
+        <a href="#post" class="button">Sign up</a>
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
-import Button from '../Button.vue';
 
 </script>
 
 <style lang="scss">
-
+@import '../../styles/mixins/adaptive';
 
 .header {
   
   &__container {
     height: 60px;
-    // padding: 0 60px;
 
+    @include desktop {
+      padding: 0 60px;
+    }
+
+    @include laptop {
+      padding: 0 30px;
+    }
+
+    @include phone {
+      padding: 0 17px;
+    }
   }
 
   &__img {

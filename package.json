@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --hot --open",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run webpack",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^1.6.2",
@@ -16,6 +18,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.1.0",
     "node-sass": "^9.0.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
